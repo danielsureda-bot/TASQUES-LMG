@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cataleg SYSTEM "cataleg.dtd">
+<cataleg>
+    <single codi="S001">
+        <titol>Single de Prueba</titol>
+        <descripcio>Una descripción opcional</descripcio>
+        <pais>España</pais>
+        <idioma>Castellano</idioma>
+        <genere><pop/></genere>
+        <grup>Los Programadores</grup>
+        <membres>
+            <membre sexe="home">
+                <nom>Juan Pérez</nom>
+            </membre>
+        </membres>
+        <durada>3:45</durada>
+    </single>
+
+    <album codi="A001">
+        <titol>Disco de Oro</titol>
+        <pais>USA</pais>
+        <idioma>Inglés</idioma>
+        <genere><jazz/></genere>
+        <grup>The Coders</grup>
+        <membres>
+            <membre sexe="dona">
+                <nom>Marta García</nom>
+            </membre>
+            <membre sexe="home">
+                <nom>Alex Smith</nom>
+            </membre>
+        </membres>
+        <numero_cancons>2</numero_cancons>
+        <titols_cancons>
+            <canco numero="1">
+                <titol_canco>Hola Mundo</titol_canco>
+                <durada_canco>4:20</durada_canco>
+            </canco>
+            <canco numero="2">
+                <titol_canco>Loop Infinito</titol_canco>
+                <durada_canco>3:15</durada_canco>
+            </canco>
+        </titols_cancons>
+    </album>
+</cataleg>
