@@ -1,0 +1,41 @@
+﻿[
+  {
+    "customer": {
+      "cust_id": 1,
+      "type": "individual",
+      "fed_id": "111-22-333",
+      "address": "Carrer Major 15",
+      "city": "Providence",
+      "state": "RI",
+      "first_name_ind": "James",
+      "last_name_ind": "Hadley",
+      "birth_date": "1972-05-20"
+    }
+  },
+  {
+    "customer": {
+      "cust_id": 10,
+      "type": "business",
+      "fed_id": "99-888777",
+      "name": "Acme Corp",
+      "state_id": "MA12345",
+      "incorp_date": "2000-01-01",
+      "state": "MA",
+      "officers": [
+        {
+          "officer_id": 101,
+          "first_name_off": "John",
+          "last_name_off": "Smith",
+          "start_date": "2010-06-15",
+          "title": "CEO"
+        },
+        {
+          "officer_id": 102,
+          "first_name_off": "Jane",
+          "last_name_off": "Doe",
+          "title": "President"
+        }
+      ]
+    }
+  }
+]
