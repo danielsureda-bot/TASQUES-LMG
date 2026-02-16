@@ -1,0 +1,64 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Llista de Clients Accounting",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "customer": {
+        "type": "object",
+        "properties": {
+          "cust_id": { "type": "integer" },
+          "type": { "enum": ["individual", "business"] },
+          "fed_id": { "type": "string" },
+          "address": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "enum": ["MA", "NH", "RI", "VE", "CN", "NY"] },
+          "postal_code": { "type": "string" }
+        },
+        "required": ["cust_id", "type", "fed_id"],
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": "individual" } } },
+            "then": {
+              "properties": {
+                "first_name_ind": { "type": "string" },
+                "last_name_ind": { "type": "string" },
+                "birth_date": { "type": "string", "format": "date" }
+              },
+              "required": ["first_name_ind", "last_name_ind"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "business" } } },
+            "then": {
+              "properties": {
+                "name": { "type": "string" },
+                "state_id": { "type": "string" },
+                "incorp_date": { "type": "string", "format": "date" },
+                "officers": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "officer_id": { "type": "integer" },
+                      "first_name_off": { "type": "string" },
+                      "last_name_off": { "type": "string" },
+                      "start_date": { "type": "string", "format": "date" },
+                      "end_date": { "type": "string", "format": "date" },
+                      "title": { "enum": ["President", "CEO"] }
+                    },
+                    "required": ["officer_id", "first_name_off", "last_name_off"]
+                  }
+                }
+              },
+              "required": ["name", "state_id", "officers"]
+            }
+          }
+        ]
+      }
+    },
+    "required": ["customer"]
+  }
+}
